@@ -52,13 +52,14 @@ const ExploreNewCategories = () => {
         />
       </div>
       <CuratedForYou/>
-      <div className="mt-12 mb-6">
+      {/* Banner 3 */}
+      {/* <div className="mt-12 mb-6">
         <img
           src="https://cdn.zeptonow.com/production///tr:w-981,ar-981-342,pr-true,f-webp,q-80/inventory/banner/ba092e9b-6ee7-4f65-aff0-db7c1bf109ad-Late-Night-Cravings-Sorted_Premium-Promo_(1).jpg"
           alt="bannerimg"
           className="h-[180px] lg:h-[430px] flex pl-2 lg:pl-[150px]"
         />
-      </div>
+      </div> */}
     </div>
   );
 };

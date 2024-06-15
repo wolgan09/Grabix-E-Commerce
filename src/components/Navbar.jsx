@@ -1,6 +1,7 @@
 import React from "react";
 import { logo } from "../assets";
-import { BsBag, BsSearch } from "react-icons/bs";
+import { BsCart3, BsSearch } from "react-icons/bs";
+import { MdLocationOn } from "react-icons/md";
 import { BiUser } from "react-icons/bi";
 import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
@@ -40,38 +41,51 @@ const Navbar = () => {
             />
           </Link>
           <div className="h-[30px] w-[3px] bg-[#c6c6c6b8] rounded-xl ml-4"></div>
-          <h2 className="text-white font-semibold text-[13px] md:text-[16px] lg:text-[20px] ml-4">
-            Location
-          </h2>
+          <h1><MdLocationOn className="text-white ml-2 mt-4" /> </h1>
+          <p className="text-white text-[12px] md:text-[12px] lg:text-[20px] ml-4 underline">
+           Pune
+          </p>
         </div>
         <div>
           <input
             type="text"
-            className="hidden md:flex md:w-[400px] lg:w-[800px] h-[42px] rounded-lg px-8"
+            className="hidden md:flex md:w-[400px] lg:w-[800px] h-[42px] rounded-lg px-2"
             placeholder="Search for over 5000+ products"
           />
         </div>
-        <BsSearch className='hidden sm:flex md:hidden text-white text-[20px]'/>
-        {
-          !id ? <Link to='/login' className='text-white font-semibold hidden sm:flex'>Login</Link>
-          :
-          <Link to='/account' className='text-white font-semibold hidden sm:flex' >My Account</Link>
-        }
-        <Link to='/cart' >
-        {
-          cartItem.length==0?<button className='hidden sm:flex bg-[#FF3269] text-white text-[13px] md:text-[16px] font-semibold px-4 md:px-9  rounded-lg lg:flex mr-10 h-[60px] items-center justify-center'>
-          <BsBag className='text-[24px] mr-3'/>My Cart
-          </button>:
-          <button className="hidden sm:flex bg-[#FF3269] text-white text-[13px] md:text-[16px] font-semibold px-4 md:px-9  rounded-lg lg:flex mr-10 h-[60px] items-center justify-center">
-            <BsBag className="text-[19px] mr-3 " />
-            <div className="h-[30px] w-[2px] bg-[#ffffff] mr-3"></div>
-            <div className="md:flex hidden  flex-col gap-y-[1px]">
-              <div className="font-medium">{cartItem.length} Items</div>
-              <div></div>₹{finalAmount}
+        <BsSearch className=" sm:flex text-white text-[20px]" />
+        <Link to="/cart">
+          {cartItem.length == 0 ? (
+            <BsCart3 className="text-[24px] text-white mr-3" />
+          ) : (
+            <div>
+              <button
+                class="py-4 px-1 relative border-2 border-transparent text-gray-800 rounded-full hover:text-gray-400 focus:outline-none focus:text-gray-500 transition duration-150 ease-in-out"
+                aria-label="Cart"
+              >
+              <BsCart3 className="text-[24px] mr-3 text-white " />
+                <span class="absolute inset-0 object-right-top -mr-6">
+                  <div class="inline-flex items-center px-1.5 py-0.5 border-2 border-white rounded-full text-xs font-semibold leading-4 bg-red-500 text-white">
+                  {cartItem.length}
+                  </div>
+                </span>
+              </button>
             </div>
-          </button>
-        }
+          )}
         </Link>
+        {!id ? (
+          <Link to="/login" className="text-white font-semibold hidden sm:flex">
+            Login
+          </Link>
+        ) : (
+          <Link
+            to="/account"
+            className="text-white font-semibold hidden sm:flex"
+          >
+            My Account
+          </Link>
+        )}
+
 
         <BiUser className="flex sm:hidden text-white text-[20px] font-semibold cursor-pointer" />
       </div>
