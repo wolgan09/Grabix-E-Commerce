@@ -5,6 +5,7 @@ import { MdLocationOn } from "react-icons/md";
 import { BiUser } from "react-icons/bi";
 import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
+import DeliveryLocation from "./DeliveryLocation";
 
 const Navbar = () => {
   const userData = useSelector((store) => {
@@ -43,7 +44,7 @@ const Navbar = () => {
           <div className="h-[30px] w-[3px] bg-[#c6c6c6b8] rounded-xl ml-4"></div>
           <h1><MdLocationOn className="text-white ml-2 mt-4" /> </h1>
           <p className="text-white text-[12px] md:text-[12px] lg:text-[20px] ml-4 underline">
-           Pune
+           <DeliveryLocation />
           </p>
         </div>
         <div>

@@ -1,25 +1,21 @@
 // Import the functions you need from the SDKs you need
-import { initializeApp } from "@firebase/app";
-import { getAuth } from "@firebase/auth";
-import {getFirestore} from 'firebase/firestore';
-import {getStorage} from 'firebase/storage'
+import { initializeApp } from "firebase/app";
+import { getAnalytics } from "firebase/analytics";
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
 
 // Your web app's Firebase configuration
+// For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig = {
-  apiKey: "AIzaSyDktJv51ItoZWR1p7BL7VQ_zUXYBxakv40",
-  authDomain: "zeptoclone-f4534.firebaseapp.com",
-  projectId: "zeptoclone-f4534",
-  storageBucket: "zeptoclone-f4534.appspot.com",
-  messagingSenderId: "472969868097",
-  appId: "1:472969868097:web:d054b2b9524689389be7c0"
+  apiKey: "AIzaSyDpustsqYfH8nKN8aku4Jn2aQHVuLBXg5g",
+  authDomain: "grabix-demo.firebaseapp.com",
+  projectId: "grabix-demo",
+  storageBucket: "grabix-demo.appspot.com",
+  messagingSenderId: "103803495511",
+  appId: "1:103803495511:web:66f67c915b8df2fdb66f12",
+  measurementId: "G-WW3Q0RS5LG"
 };
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
-export const db = getFirestore(app);
-export const auth = getAuth(app);
-export const storage = getStorage(app);
-
-
+const analytics = getAnalytics(app);
