@@ -3,7 +3,7 @@ import { BsChevronRight } from "react-icons/bs";
 import { curatedforyou } from "../constant/data";
 import { MdChevronLeft, MdChevronRight } from "react-icons/md";
 
-const CuratedForYou = () => {
+const MostPopular = () => {
   const sliderLeft = () => {
     const slider = document.getElementById("slider3");
     slider.scrollLeft = slider.scrollLeft - 500;
@@ -18,7 +18,7 @@ const CuratedForYou = () => {
     <div className="mt-2 py-10">
       <div className="flex flex-row justify-around gap-[200px] ml-0 md:gap-[700px] pb-6 sm:ml-0">
         <h2 className="text-md sm:text-xl font-semibold py-2">
-          Curated For You
+          Most Popular Products
         </h2>
         <a
           href="/"
@@ -54,4 +54,4 @@ const CuratedForYou = () => {
   );
 };
 
-export default CuratedForYou;
+export default MostPopular;

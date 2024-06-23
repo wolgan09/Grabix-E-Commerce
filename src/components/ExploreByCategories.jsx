@@ -32,7 +32,7 @@ const ExploreByCategories = () => {
       <div className="mt-12 w-[100%] mb-8">
         <div className="flex flex-row justify-around gap-[200px] ml-0 md:gap-[700px] pb-6 sm:ml-0">
           <h2 className="text-md sm:text-xl font-semibold">
-            Explore By Categories
+          Categories
           </h2>
           <Link
             to="/allproducts/Fruits"

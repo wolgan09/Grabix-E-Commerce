@@ -6,7 +6,7 @@ const HowItWorks = () => {
     <div className="mt-16 mb-4 w-[100%] h-auto">
       <div className="flex flex-col justify-center items-center mt-8 mb-4">
         <div>
-          <h2 className="text-2xl font-semibold pt-4 pb-6">How it Works</h2>
+          <h2 className="text-2xl font-semibold pt-4 pb-6">Best Rated Products</h2>
         </div>
         <div className=" flex flex-wrap md:flex-row justify-center items-center gap-8 box-border">
           {howitworks.map((item, id) => (

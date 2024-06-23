@@ -6,6 +6,7 @@ import { BiUser } from "react-icons/bi";
 import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
 import DeliveryLocation from "./DeliveryLocation";
+import MenuDropdown from "./MenuDropdown";
 
 const Navbar = () => {
   const userData = useSelector((store) => {
@@ -32,7 +33,7 @@ const Navbar = () => {
 
   return (
     <>
-      <div className="bg-[#450072] flex flex-row h-[80px] w-[100%] items-center justify-around md:justify-evenly">
+      <div className="bg-white border-b-2 border-gray-600 flex flex-row h-[80px] w-[100%] items-center justify-around md:justify-evenly">
         <div className="flex flex-row items-center justify-evenly">
           <Link to="/">
             <img
@@ -42,53 +43,57 @@ const Navbar = () => {
             />
           </Link>
           <div className="h-[30px] w-[3px] bg-[#c6c6c6b8] rounded-xl ml-4"></div>
-          <h1><MdLocationOn className="text-white ml-2 mt-4" /> </h1>
+          <h1>
+            <MdLocationOn className="text-[#0A1408] ml-2 mt-4" />{" "}
+          </h1>
           <p className="text-white text-[12px] md:text-[12px] lg:text-[20px] ml-4 underline">
-           <DeliveryLocation />
+            <DeliveryLocation />
           </p>
         </div>
         <div>
           <input
             type="text"
-            className="hidden md:flex md:w-[400px] lg:w-[800px] h-[42px] rounded-lg px-2"
+            className="hidden md:flex md:w-[200px] lg:w-[650px] h-[42px] rounded-lg px-2 border-2"
             placeholder="Search for over 5000+ products"
           />
         </div>
-        <BsSearch className=" sm:flex text-white text-[20px]" />
+        <BsSearch className="sm:flex text-[#0A1408] text-[20px]" />
         <Link to="/cart">
           {cartItem.length == 0 ? (
-            <BsCart3 className="text-[24px] text-white mr-3" />
+            <BsCart3 className="text-[24px] text-[#0A1408] mr-3" />
           ) : (
             <div>
               <button
                 class="py-4 px-1 relative border-2 border-transparent text-gray-800 rounded-full hover:text-gray-400 focus:outline-none focus:text-gray-500 transition duration-150 ease-in-out"
                 aria-label="Cart"
               >
-              <BsCart3 className="text-[24px] mr-3 text-white " />
+                <BsCart3 className="text-[24px] mr-3 text-[#0A1408] " />
                 <span class="absolute inset-0 object-right-top -mr-6">
                   <div class="inline-flex items-center px-1.5 py-0.5 border-2 border-white rounded-full text-xs font-semibold leading-4 bg-red-500 text-white">
-                  {cartItem.length}
+                    {cartItem.length}
                   </div>
                 </span>
               </button>
             </div>
           )}
         </Link>
-        {!id ? (
-          <Link to="/login" className="text-white font-semibold hidden sm:flex">
+        {!!id ? (
+          <Link
+            to="/login"
+            className="text-[#0A1408] font-semibold hidden sm:flex"
+          >
             Login
           </Link>
         ) : (
           <Link
             to="/account"
-            className="text-white font-semibold hidden sm:flex"
+            className="text-[#0A1408] font-semibold hidden sm:flex"
           >
-            My Account
+            <MenuDropdown />
           </Link>
         )}
 
-
-        <BiUser className="flex sm:hidden text-white text-[20px] font-semibold cursor-pointer" />
+        <BiUser className="flex sm:hidden text-[#0A1408] text-[20px] font-semibold cursor-pointer" />
       </div>
     </>
   );

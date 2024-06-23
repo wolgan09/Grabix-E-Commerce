@@ -7,22 +7,6 @@ import { BsGooglePlay } from "react-icons/bs";
 const Footer = () => {
   return (
     <div className="w-[100%] pl-8 md:pl-32 pt-4 md:pt-10">
-      <div className="">
-        <h2 className="text-[18px] md:text-[24px] font-medium ">Categories</h2>
-        <div className="mt-4 md:mt-8 mb-6 w-[100%]">
-          <ul className="flex flex-col flex-wrap h-[300px] md:h-[200px] w-[200px] md:w-full gap-x-5 md:gap-x-0 text-[12px] md:text-[14px] text-[#575757]">
-            {category.map((item, id) => (
-              <li key ={id}
-                className="my-2 cursor-pointer"
-                onClick={() => window.open(item.link)}
-              >
-                {item.title}
-              </li>
-            ))}
-          </ul>
-          <div className="h-[2px] bg-[#97969690] w-[94%] rounded-lg my-8"></div>
-        </div>
-      </div>
       <div className="flex flex-col md:flex-row gap-x-32 mb-10 mt-12">
         <div className="">
           <img src={logo} alt="logo" />
@@ -43,17 +27,20 @@ const Footer = () => {
           <div className="mt-8">
             <ul className="gap-4">
               <li className="mb-2">Home</li>
-              <li className="mb-2">Delivery Areas</li>
-              <li className="mb-2">Careers</li>
+              <li className="mb-2">Subscribe with email</li>
+              <li className="mb-2">Become a Supplier</li>
               <li className="mb-2">Customer Support</li>
-              <li className="mb-2">Press</li>
+              <li className="mb-2">Become a delivery Partner</li>
             </ul>
           </div>
           <div className="mt-8">
             <ul>
               <li className="mb-2">Privacy Policy</li>
               <li className="mb-2">Terms of Use</li>
-              <li className="mb-2">Responsible Disclosure Policy</li>
+              <li className="mb-2">About Us</li>
+              <li className="mb-2">Cancellation Policy</li>
+              <li className="mb-2">Cities</li>
+
             </ul>
           </div>
           <div className="mt-8">

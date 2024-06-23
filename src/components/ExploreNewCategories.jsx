@@ -2,7 +2,8 @@ import React from "react";
 import { BsChevronRight } from "react-icons/bs";
 import { explorenewcategory } from "../constant/data";
 import { MdChevronLeft, MdChevronRight } from "react-icons/md";
-import CuratedForYou from "./CuratedForYou";
+import MostPopular from "./MostPopular";
+import NewProducts from "./NewProducts";
 
 const ExploreNewCategories = () => {
   const sliderLeft = () => {
@@ -19,7 +20,7 @@ const ExploreNewCategories = () => {
     <div>
       <div className="flex flex-row justify-around gap-[200px] ml-0 md:gap-[700px] pb-6 sm:ml-0">
         <h2 className="text-md sm:text-xl font-semibold">
-          Explore By Categories
+          Recent Searches
         </h2>
         <a
           href="/"
@@ -51,7 +52,8 @@ const ExploreNewCategories = () => {
           className="text-[40px] text-black ml-2 cursor-pointer opacity-50 hover:opacity-100 mt-6 md:mt-24"
         />
       </div>
-      <CuratedForYou/>
+      <MostPopular/>
+      <NewProducts />
       {/* Banner 3 */}
       {/* <div className="mt-12 mb-6">
         <img
