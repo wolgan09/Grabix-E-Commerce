@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { logo } from "../assets";
 import { BsCart3, BsSearch } from "react-icons/bs";
 import { MdLocationOn } from "react-icons/md";
@@ -7,6 +7,7 @@ import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
 import DeliveryLocation from "./DeliveryLocation";
 import MenuDropdown from "./MenuDropdown";
+import SearchComponent from "./SearchComponent";
 
 const Navbar = () => {
   const userData = useSelector((store) => {
@@ -50,13 +51,17 @@ const Navbar = () => {
             <DeliveryLocation />
           </p>
         </div>
-        <div>
-          <input
-            type="text"
-            className="hidden md:flex md:w-[200px] lg:w-[650px] h-[42px] rounded-lg px-2 border-2"
-            placeholder="Search for over 5000+ products"
-          />
-        </div>
+        <SearchComponent
+          data={[
+            "Apple",
+            "Banana",
+            "Cherry",
+            "Date",
+            "Elderberry",
+            "Fig",
+            "Grape",
+          ]}
+        />
         <BsSearch className="sm:flex text-[#0A1408] text-[20px]" />
         <Link to="/cart">
           {cartItem.length == 0 ? (
@@ -77,7 +82,7 @@ const Navbar = () => {
             </div>
           )}
         </Link>
-        {!!id ? (
+        {!id ? (
           <Link
             to="/login"
             className="text-[#0A1408] font-semibold hidden sm:flex"

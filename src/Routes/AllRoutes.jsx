@@ -19,11 +19,11 @@ function AllRoutes() {
         <Route path="/allproducts/:products" element={<AllProducts />} />
         <Route path="/signup" element={<SignUp />} />
         <Route path="/login" element={<Login />} />
-        {/* <Route path='/cart' element={
+        <Route path='/cart' element={
               <PrivateRoute>
                 <Cart/>
               </PrivateRoute>
-              } /> */}
+              } />
         <Route path="/cart" element={<Cart />} />
         <Route path="/allproducts/:products/:id" element={<SingleProduct />} />
         <Route
