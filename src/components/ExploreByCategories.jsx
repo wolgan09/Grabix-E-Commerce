@@ -44,7 +44,7 @@ const ExploreByCategories = () => {
         </div>
         <div className="flex-wrap md:flex flex-row gap-x-4 box-border justify-center items-center ml-10 md:ml-0">
           <div className="flex flex-row gap-x-4">
-            <a href="/all products/Fruits">
+            <a href="/allproducts/Fruits">
               <img
                 src={ebcfruitsandvege}
                 alt="img"

@@ -1,5 +1,6 @@
 import React from "react";
-import { howitworks } from "../constant/data";
+import { bestRatedProducts } from "../constant/data";
+import Ratings from "./Ratings";
 
 const HowItWorks = () => {
   return (
@@ -8,17 +9,18 @@ const HowItWorks = () => {
         <div>
           <h2 className="text-2xl font-semibold pt-4 pb-6">Best Rated Products</h2>
         </div>
-        <div className=" flex flex-wrap md:flex-row justify-center items-center gap-8 box-border">
-          {howitworks.map((item, id) => (
+        <div className=" flex-wrap md:flex flex-row gap-x-4 box-border justify-center items-center ml-10 md:ml-0">
+          {bestRatedProducts.map((item, id) => (
             <div
               key={id}
-              className=" px-8 py-12 flex flex-col justify-center items-center shadow-xl rounded-xl border-[1px] border-[#c9c8c83c]"
+              className="w-[400px] px-8 py-12 flex flex-col justify-center items-center shadow-xl rounded-xl border-[1px] border-[#c9c8c83c]"
             >
               <img src={item.img} alt="" />
               <h2 className="text-xl font-semibold pt-4">{item.title}</h2>
               <p className="w-[240px] text-center text-sm pt-2">
                 {item.description}
               </p>
+              <Ratings stars={item.rating} />
             </div>
           ))}
         </div>
