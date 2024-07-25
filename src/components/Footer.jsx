@@ -31,6 +31,7 @@ const Footer = () => {
               <li className="mb-2">Become a Supplier</li>
               <li className="mb-2">Customer Support</li>
               <li className="mb-2">Become a delivery Partner</li>
+              <li className="mb-2">Careers</li>
             </ul>
           </div>
           <div className="mt-8">
@@ -50,10 +51,10 @@ const Footer = () => {
                 <BsGooglePlay className="text-[20px]" />
                 Get it on Playstore
               </button>
-              <button className="mb-2 border-2 px-4 md:px-10 py-3 rounded-lg flex flex-row justify-center items-center gap-4" onClick={()=>window.open("https://apps.apple.com/in/app/zepto-grocery-delivery/id1575323645")}>
+              {/* <button className="mb-2 border-2 px-4 md:px-10 py-3 rounded-lg flex flex-row justify-center items-center gap-4" onClick={()=>window.open("https://apps.apple.com/in/app/zepto-grocery-delivery/id1575323645")}>
                 <AiFillApple className="text-[24px]" />
                 Get it on Apple Store
-              </button>
+              </button> */}
 
           </div>
         </div>

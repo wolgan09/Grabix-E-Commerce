@@ -24,7 +24,6 @@ export default function MenuDropdown() {
           Orders
         </MenuItem>
         <MenuItem onClick={createHandleMenuClick('Log out')}>Addresses</MenuItem>
-        <MenuItem onClick={createHandleMenuClick('Log out')}>Wallets</MenuItem>
         <MenuItem onClick={createHandleMenuClick('Log out')}>Customer Support ( +91-9999999999)</MenuItem>
         <MenuItem onClick={createHandleMenuClick('Log out')}>Log out</MenuItem>
       </Menu>

@@ -10,7 +10,7 @@ function Customer() {
             <div><BsPenFill style={{fontSize:"30px"}} /></div>
             <div>
                 <p>Email</p>
-                <p className={styles.emailName} >support@geddit.in</p>
+                <p className={styles.emailName} >support@grabix.in</p>
             </div>
         </div>
         <div className={styles.chatDiv} >

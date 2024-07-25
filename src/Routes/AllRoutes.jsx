@@ -9,6 +9,7 @@ import SignUp from '../Pages/SignUp';
 import SingleProduct from '../Pages/SingleProduct';
 import UserAccount from '../Pages/UserAccount';
 import Payment from '../Pages/Payment';
+import Dashboard from '../../admin/src/pages/Dashboard';
 
 
 function AllRoutes() {
@@ -35,6 +36,7 @@ function AllRoutes() {
           }
         />
         <Route path="/payment" element={<Payment />} />
+        <Route path="/admin" element={<Dashboard />} />
       </Routes>
     </>
   );
