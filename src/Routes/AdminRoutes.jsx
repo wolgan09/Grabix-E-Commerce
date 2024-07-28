@@ -10,6 +10,8 @@ import { productInputs, userInputs } from "../Pages/admin/formSource";
 import "../Pages/admin/style/dark.scss";
 import { DarkModeContext } from "../Pages/admin/context/darkModeContext";
 import { AuthContext } from "../Pages/admin/context/AuthContext";
+import ProductsList from '../Pages/admin/pages/list/ProductsList';
+import Admin from '../Pages/admin/Admin';
 
 function AdminRoutes() {
 
@@ -36,9 +38,9 @@ function AdminRoutes() {
         <Route
           index
           element={
-            <RequireAuth>
+            // <RequireAuth>
               <List />
-            </RequireAuth>
+            // </RequireAuth>
           }
         />
         <Route
@@ -53,7 +55,7 @@ function AdminRoutes() {
           path="new"
           element={
             <RequireAuth>
-              <New inputs={userInputs} title="Add New User" />
+              <New inputs={userInputs} title="Add New Vendor" />
             </RequireAuth>
           }
         />
@@ -62,9 +64,9 @@ function AdminRoutes() {
         <Route
           index
           element={
-            <RequireAuth>
-              <List />
-            </RequireAuth>
+            // <RequireAuth>
+              <ProductsList />
+            // </RequireAuth>
           }
         />
         <Route

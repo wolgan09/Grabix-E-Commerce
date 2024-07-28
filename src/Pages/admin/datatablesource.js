@@ -7,8 +7,8 @@ export const userColumns = [
     renderCell: (params) => {
       return (
         <div className="cellWithImg">
-          <img className="cellImg" src={params.row.img} alt="avatar" />
-          {params.row.username}
+          {/* <img className="cellImg" src={params.row.img} alt="avatar" /> */}
+          {params.row.user}
         </div>
       );
     },
@@ -35,5 +35,38 @@ export const userColumns = [
         </div>
       );
     },
+  },
+];
+
+export const productsColumns = [
+  { field: "id", headerName: "ID", width: 70 },
+  {
+    field: "images",
+    headerName: "image",
+    width: 230,
+    renderCell: (params) => {
+      return (
+        <div className="cellWithImg">
+          <img className="cellImg" src={params.row.images} alt="avatar" />
+          {params.row.username}
+        </div>
+      );
+    },
+  },
+  {
+    field: "title",
+    headerName: "Title",
+    width: 230,
+  },
+  {
+    field: "category",
+    headerName: "Category",
+    width: 230,
+  },
+
+  {
+    field: "price",
+    headerName: "Price",
+    width: 100,
   },
 ];

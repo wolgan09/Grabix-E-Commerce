@@ -3,17 +3,21 @@ import { DataGrid } from "@mui/x-data-grid";
 import { userColumns, userRows } from "../../datatablesource";
 import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
-import {
-  collection,
-  getDocs,
-  deleteDoc,
-  doc,
-  onSnapshot,
-} from "firebase/firestore";
-import { db } from "../../firebase";
+import AllUsers from "../../pages/list/data-userslist";
+
+// import {
+//   collection,
+//   getDocs,
+//   deleteDoc,
+//   doc,
+//   onSnapshot,
+// } from "firebase/firestore";
+// import { db } from "../../firebase";
 
 const Datatable = () => {
-  const [data, setData] = useState([]);
+  // const [data, setData] = useState([
+
+  // ]);
 
   // API based.
   // useEffect(() => {
@@ -53,12 +57,13 @@ const Datatable = () => {
   // }, []);
 
   const handleDelete = async (id) => {
-    try {
-      await deleteDoc(doc(db, "users", id));
-      setData(data.filter((item) => item.id !== id));
-    } catch (err) {
-      console.log(err);
-    }
+    // try {
+    //   await deleteDoc(doc(db, "users", id));
+    //   setData(data.filter((item) => item.id !== id));
+    // } catch (err) {
+    //   console.log(err);
+    // }
+    console.log('Handle Delete')
   };
 
   const actionColumn = [
@@ -86,14 +91,14 @@ const Datatable = () => {
   return (
     <div className="datatable">
       <div className="datatableTitle">
-        Add New User
+        Vendors
         <Link to="/admin/users/new" className="link">
-          Add New
+          Add Vendor
         </Link>
       </div>
       <DataGrid
         className="datagrid"
-        rows={data}
+        rows={AllUsers}
         columns={userColumns.concat(actionColumn)}
         pageSize={9}
         rowsPerPageOptions={[9]}

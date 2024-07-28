@@ -9,9 +9,7 @@ import Table from "../../components/table/Table";
 const Dashboard = () => {
   return (
     <div className="home">
-      <Sidebar />
       <div className="homeContainer">
-        <Navbar />
         <div className="widgets">
           <Widget type="user" />
           <Widget type="product" />
