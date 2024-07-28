@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux';
 import { useParams } from 'react-router-dom';
-import { addToCart } from '../Redux/Cart/cart.actions';
+import { addToCart } from '../../../Redux/Cart/cart.actions';
 import styles from '../styles/SingleProduct.module.css';
 import "react-toastify/dist/ReactToastify.css";
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader

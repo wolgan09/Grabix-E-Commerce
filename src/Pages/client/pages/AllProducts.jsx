@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import AllCategories from "../components/AllCategories";
 import ProductDetails from "../components/ProductDetails";
 import { useDispatch, useSelector } from "react-redux";
-import { getProducts } from "../Redux/Products/products.actions";
+import { getProducts } from "../../../Redux/Products/products.actions";
 import { useParams, useSearchParams } from "react-router-dom";
 import axios from "axios";
 import Filter from "../components/Filter";

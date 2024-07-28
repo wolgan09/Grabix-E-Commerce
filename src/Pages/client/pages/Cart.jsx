@@ -1,6 +1,6 @@
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { removeFromCart } from "../Redux/Cart/cart.actions";
+import { removeFromCart } from "../../../Redux/Cart/cart.actions";
 import styles from "../styles/Cart.module.css";
 import { MdDelete } from "react-icons/md";
 import { GiTwoCoins } from "react-icons/gi";

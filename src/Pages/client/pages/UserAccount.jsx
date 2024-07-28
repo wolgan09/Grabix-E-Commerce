@@ -3,11 +3,11 @@ import styles from '../styles/UserAccount.module.css';
 import { BsFillBagCheckFill , BsFillChatTextFill , BsFillGeoAltFill , BsFillPersonFill} from "react-icons/bs";
 import Order from '../components/Order';
 import Profile from '../components/Profile';
-import Customer from '../components/Customer';
+import Customer from '../components/CustomerMenu';
 import Addresses from '../components/Addresses';
 import { useDispatch, useSelector } from 'react-redux';
-import { userLogout } from '../Redux/UserAuth/userAuth.actions';
-import { addToCart } from '../Redux/Cart/cart.actions';
+import { userLogout } from '../../../Redux/UserAuth/userAuth.actions';
+import { addToCart } from '../../../Redux/Cart/cart.actions';
 const arr = JSON.parse(localStorage.getItem("orderItem")) || [];
 
 function UserAccount() {

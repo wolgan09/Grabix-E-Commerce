@@ -2,7 +2,7 @@ import React from 'react';
 import { BsChatDots , BsPenFill} from "react-icons/bs";
 import styles from '../styles/Customer.module.css'
 
-function Customer() {
+function CustomerMenu() {
   return (
     <div className={styles.customerMain} >
         <div className={styles.contactUs} >Contact Us</div>
@@ -21,4 +21,4 @@ function Customer() {
   )
 }
 
-export default Customer
+export default CustomerMenu

@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
 import styles from '../styles/Login.module.css'
-import {auth} from '../firebase'
+import {auth} from '../../../firebase'
 import { signInWithEmailAndPassword , GoogleAuthProvider , signInWithPopup } from '@firebase/auth';
 import { Link, useNavigate } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
-import { userLogin } from '../Redux/UserAuth/userAuth.actions';
+import { userLogin } from '../../../Redux/UserAuth/userAuth.actions';
 import {FcGoogle} from "react-icons/fc";
 import "react-toastify/dist/ReactToastify.css";
 	

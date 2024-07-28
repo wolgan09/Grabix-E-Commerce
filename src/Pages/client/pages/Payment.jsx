@@ -1,7 +1,7 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
-import { removeFromCart } from "../Redux/Cart/cart.actions";
+import { removeFromCart } from "../../../Redux/Cart/cart.actions";
 import { useSelector } from "react-redux";
 import { MdDelete } from "react-icons/md";
 import { GiTwoCoins } from "react-icons/gi";

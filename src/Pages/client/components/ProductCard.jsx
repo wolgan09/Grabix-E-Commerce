@@ -1,6 +1,6 @@
 import React from "react";
 import { useDispatch } from "react-redux";
-import { addToCart } from "../Redux/Cart/cart.actions";
+import { addToCart } from "../../../Redux/Cart/cart.actions";
 import "react-toastify/dist/ReactToastify.css";
 	
 import { toast } from "react-toastify";

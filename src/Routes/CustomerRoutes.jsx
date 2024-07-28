@@ -1,18 +1,18 @@
 import React from 'react';
 import { Route, Routes } from 'react-router-dom'
-import PrivateRoute from '../components/PrivateRoute';
-import AllProducts from '../Pages/AllProducts';
-import Cart from '../Pages/Cart';
-import Home from '../Pages/Home';
-import Login from '../Pages/Login';
-import SignUp from '../Pages/SignUp';
-import SingleProduct from '../Pages/SingleProduct';
-import UserAccount from '../Pages/UserAccount';
-import Payment from '../Pages/Payment';
-import Dashboard from '../../admin/src/pages/Dashboard';
+import PrivateRoute from '../Pages/client/components/PrivateRoute';
+import AllProducts from '../Pages/client/pages/AllProducts';
+import Cart from '../Pages/client/pages/Cart';
+import Home from '../Pages/client/pages/Home';
+import Login from '../Pages/client/pages/Login';
+import SignUp from '../Pages/client/pages/SignUp';
+import SingleProduct from '../Pages/client/pages/SingleProduct';
+import UserAccount from '../Pages/client/pages/UserAccount';
+import Payment from '../Pages/client/pages/Payment';
+import Dashboard from '../Pages/admin/pages/Dashboard';
 
 
-function AllRoutes() {
+function CustomerRoutes() {
   return (
     <>
       <Routes>
@@ -36,10 +36,9 @@ function AllRoutes() {
           }
         />
         <Route path="/payment" element={<Payment />} />
-        <Route path="/admin" element={<Dashboard />} />
       </Routes>
     </>
   );
 }
 
-export default AllRoutes
+export default CustomerRoutes
