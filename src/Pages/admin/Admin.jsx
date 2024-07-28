@@ -1,9 +1,11 @@
-import React from 'react'
+import AdminRoutes from "../../Routes/AdminRoutes";
 
 function Admin() {
   return (
-    <div>Admin</div>
-  )
+    <div >
+      <AdminRoutes />
+    </div>
+  );
 }
 
-export default Admin
+export default Admin;

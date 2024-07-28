@@ -9,7 +9,6 @@ import SignUp from '../Pages/client/pages/SignUp';
 import SingleProduct from '../Pages/client/pages/SingleProduct';
 import UserAccount from '../Pages/client/pages/UserAccount';
 import Payment from '../Pages/client/pages/Payment';
-import Dashboard from '../Pages/admin/pages/Dashboard';
 
 
 function CustomerRoutes() {
