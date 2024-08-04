@@ -11,16 +11,39 @@ import { db } from "../../firebase";
 
 const Widget = ({ type }) => {
   const [amount, setAmount] = useState(null);
+  const [productsCount, setProductsCount] = useState(10);
+  const [ordersCount, setOrdersCount] = useState(12);
+  const [customersCount, setCustomersCount] = useState(5);
+  const [storesCount, setStoresCount] = useState(5);
   const [diff, setDiff] = useState(null);
   let data;
 
   switch (type) {
-    case "user":
+    case "customers":
       data = {
-        title: "USERS",
+        title: "Customers",
+        totalCount: 12,
         isMoney: false,
-        link: "See all users",
-        query:"users",
+        link: "See all customers",
+        query:"customers",
+        icon: (
+          <PersonOutlinedIcon
+            className="icon"
+            style={{
+              color: "crimson",
+              backgroundColor: "rgba(255, 0, 0, 0.2)",
+            }}
+          />
+        ),
+      };
+      break;
+    case "stores":
+      data = {
+        title: "Stores",
+        totalCount: 5,
+        isMoney: false,
+        link: "See all stores",
+        query:"stores",
         icon: (
           <PersonOutlinedIcon
             className="icon"
@@ -34,7 +57,8 @@ const Widget = ({ type }) => {
       break;
     case "order":
       data = {
-        title: "ORDERS",
+        title: "Orders",
+        totalCount: 10,
         isMoney: false,
         link: "View all orders",
         icon: (
@@ -63,7 +87,8 @@ const Widget = ({ type }) => {
       break;
     case "product":
       data = {
-        title: "PRODUCTS",
+        title: "Products",
+        totalCount: 10,
         query:"products",
         link: "See details",
         icon: (
@@ -115,17 +140,20 @@ const Widget = ({ type }) => {
       <div className="left">
         <span className="title">{data.title}</span>
         <span className="counter">
-          {data.isMoney && "$"} {amount}
+          {data.isMoney && "$"} {data.totalCount}
         </span>
-        <span className="link">{data.link}</span>
+        {/* <span className="link">{data.link}</span> */}
       </div>
       <div className="right">
+      <span className="icon">{data.icon}</span>
+      </div>
+      {/* <div className="right">
         <div className={`percentage ${diff < 0 ? "negative" : "positive"}`}>
           {diff < 0 ? <KeyboardArrowDownIcon/> : <KeyboardArrowUpIcon/> }
           {diff} %
         </div>
         {data.icon}
-      </div>
+      </div> */}
     </div>
   );
 };

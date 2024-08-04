@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
 import { Routes, Route, Navigate } from "react-router-dom";
 import PrivateRoute from '../Pages/client/components/PrivateRoute';
-import Home from "../Pages/admin/pages/home/Home";
+import Dashboard from "../Pages/admin/pages/Dashboard/Dashboard";
 import Login from "../Pages/admin/pages/login/Login";
 import List from "../Pages/admin/pages/list/List";
 import Single from "../Pages/admin/pages/single/Single";
@@ -10,8 +10,9 @@ import { productInputs, userInputs } from "../Pages/admin/formSource";
 import "../Pages/admin/style/dark.scss";
 import { DarkModeContext } from "../Pages/admin/context/darkModeContext";
 import { AuthContext } from "../Pages/admin/context/AuthContext";
-import ProductsList from '../Pages/admin/pages/list/ProductsList';
-import Admin from '../Pages/admin/Admin';
+import ProductsList from '../Pages/admin/pages/products/ProductsList';
+import OrdersList from '../Pages/admin/pages/orders/AllOrders';
+import OrderDetails from '../Pages/admin/pages/orders/OrderDetails';
 
 function AdminRoutes() {
 
@@ -30,7 +31,7 @@ function AdminRoutes() {
         index
         element={
           // <RequireAuth>
-            <Home />
+            <Dashboard />
           // </RequireAuth>
         }
       />
@@ -82,6 +83,24 @@ function AdminRoutes() {
           element={
             <RequireAuth>
               <New inputs={productInputs} title="Add New Product" />
+            </RequireAuth>
+          }
+        />
+      </Route>
+      <Route path="orders">
+        <Route
+          index
+          element={
+            // <RequireAuth>
+              <OrdersList />
+            // </RequireAuth>
+          }
+        />
+        <Route
+          path=":productId"
+          element={
+            <RequireAuth>
+              <OrderDetails />
             </RequireAuth>
           }
         />

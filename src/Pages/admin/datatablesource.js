@@ -1,3 +1,5 @@
+import { Chip } from "@mui/material";
+
 export const userColumns = [
   { field: "id", headerName: "ID", width: 70 },
   {
@@ -68,5 +70,30 @@ export const productsColumns = [
     field: "price",
     headerName: "Price",
     width: 100,
+  },
+];
+
+
+export const orderColumns = [
+  { field: "id", headerName: "#Serial", width: 70 },
+  { field: "orderId", headerName: "Order id" },
+  { field: "orderDate", headerName: "Order date" },
+  { field: "customerInfo", headerName: "Customer info" },
+  { field: "store", headerName: "Store", width: 150 },
+  { field: "itemQty", headerName: "Quantity" },
+  { field: "paymentType", headerName: "Payment Type" },
+  { field: "totalAmt", headerName: "Total" },
+  {
+    field: "orderStatus",
+    headerName: "Order status",
+    width: 150,
+    renderCell: (params) => {
+      const statusColor = params.row.orderStatus === 'Delivered' ? 'success' : "primary"
+      return (
+        <div >
+          <Chip color={statusColor} label={params.row.orderStatus} />
+        </div>
+      );
+    },
   },
 ];
