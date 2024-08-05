@@ -97,11 +97,11 @@ function AdminRoutes() {
           }
         />
         <Route
-          path=":productId"
+          path=":id"
           element={
-            <RequireAuth>
+            // <RequireAuth>
               <OrderDetails />
-            </RequireAuth>
+            // </RequireAuth>
           }
         />
       </Route>
