@@ -52,10 +52,12 @@ const Sidebar = () => {
             <span>Orders</span>
           </li>
           </Link>
+          <Link to="/admin/banners" style={{ textDecoration: "none" }}>
           <li>
             <LocalShippingIcon className="icon" />
-            <span>Delivery</span>
+            <span>Banner</span>
           </li>
+          </Link>
           <li>
             <AccountCircleOutlinedIcon className="icon" />
             <span>Profile</span>
@@ -66,7 +68,7 @@ const Sidebar = () => {
           </li>
         </ul>
       </div>
-      <div className="bottom">
+      {/* <div className="bottom">
         <div
           className="colorOption"
           onClick={() => dispatch({ type: "LIGHT" })}
@@ -75,7 +77,7 @@ const Sidebar = () => {
           className="colorOption"
           onClick={() => dispatch({ type: "DARK" })}
         ></div>
-      </div>
+      </div> */}
     </div>
   );
 };

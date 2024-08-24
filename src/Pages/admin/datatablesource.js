@@ -75,11 +75,12 @@ export const productsColumns = [
 
 
 export const orderColumns = [
-  { field: "id", headerName: "#Serial", width: 70 },
+  { field: "id", headerName: "#Serial"},
+  { field: "itemName", headerName: "Title", width: 70 },
   { field: "orderId", headerName: "Order id" },
   { field: "orderDate", headerName: "Order date" },
   { field: "customerInfo", headerName: "Customer info" },
-  { field: "store", headerName: "Store", width: 150 },
+  { field: "store", headerName: "Store", width: 150},
   { field: "itemQty", headerName: "Quantity" },
   { field: "paymentType", headerName: "Payment Type" },
   { field: "totalAmt", headerName: "Total" },

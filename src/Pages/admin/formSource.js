@@ -75,3 +75,24 @@ export const userInputs = [
     },
   ];
   
+  export const banerInputs = [
+    {
+      id: 1,
+      label: "Title",
+      type: "text",
+      placeholder: "Apple Macbook Pro",
+    },
+    {
+      id: 2,
+      label: "Banner Type",
+      type: "text",
+      placeholder: "Computers",
+    },
+    {
+      id: 3,
+      label: "Zone",
+      type: "text",
+      placeholder: "in stock",
+    },
+  ];
+  

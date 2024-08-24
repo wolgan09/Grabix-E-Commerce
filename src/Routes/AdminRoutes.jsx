@@ -1,8 +1,6 @@
 import React, { useContext } from 'react';
 import { Routes, Route, Navigate } from "react-router-dom";
-import PrivateRoute from '../Pages/client/components/PrivateRoute';
 import Dashboard from "../Pages/admin/pages/Dashboard/Dashboard";
-import Login from "../Pages/admin/pages/login/Login";
 import List from "../Pages/admin/pages/list/List";
 import Single from "../Pages/admin/pages/single/Single";
 import New from "../Pages/admin/pages/new/New";
@@ -13,6 +11,8 @@ import { AuthContext } from "../Pages/admin/context/AuthContext";
 import ProductsList from '../Pages/admin/pages/products/ProductsList';
 import OrdersList from '../Pages/admin/pages/orders/AllOrders';
 import OrderDetails from '../Pages/admin/pages/orders/OrderDetails';
+import BannerPage from '../Pages/admin/pages/banner/BannerPage';
+import AddProduct from '../Pages/admin/pages/products/AddProduct';
 
 function AdminRoutes() {
 
@@ -81,9 +81,9 @@ function AdminRoutes() {
         <Route
           path="new"
           element={
-            <RequireAuth>
-              <New inputs={productInputs} title="Add New Product" />
-            </RequireAuth>
+            // <RequireAuth>
+              <AddProduct />
+            // </RequireAuth>
           }
         />
       </Route>
@@ -97,7 +97,7 @@ function AdminRoutes() {
           }
         />
         <Route
-          path=":id"
+          path=":Id"
           element={
             // <RequireAuth>
               <OrderDetails />
@@ -105,6 +105,7 @@ function AdminRoutes() {
           }
         />
       </Route>
+      <Route path="banners" element={<BannerPage />}/>
     </Route>
   </Routes>
   );

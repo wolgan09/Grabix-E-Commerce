@@ -43,7 +43,7 @@ const ProductsList = () => {
         <div className="datatable">
           <div className="datatableTitle">
             Products List
-            <Link to="/admin/users/new" className="link">
+            <Link to="/admin/products/new" className="link">
               Add Product
             </Link>
           </div>
