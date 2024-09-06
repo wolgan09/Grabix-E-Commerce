@@ -13,16 +13,13 @@ const DeliveryLocation = () => {
   const [open, setOpen] = useState(false);
   const [location, setLocation] = useState(null);
 
-  const success = React.useCallback(
-    (position) => {
-      const latitude = position.coords.latitude;
-      const longitude = position.coords.longitude;
-      setLocation({ latitude, longitude });
-      console.log(`Location: ${location}`);
-      console.log(`Latitude: ${latitude}, Longitude: ${longitude}`);
-    },
-    [location]
-  );
+  const success = React.useCallback((position) => {
+    const latitude = position.coords.latitude;
+    const longitude = position.coords.longitude;
+    setLocation({ latitude, longitude });
+    console.log(`Latitude: ${latitude}, Longitude: ${longitude}`);
+  }, []);
+  console.log(location);
 
   const handleClickOpen = () => {
     setOpen(true);

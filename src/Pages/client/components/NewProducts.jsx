@@ -17,9 +17,7 @@ const NewProducts = () => {
   return (
     <div className="mt-2 py-10">
       <div className="flex flex-row justify-around gap-[200px] ml-0 md:gap-[700px] pb-6 sm:ml-0">
-        <h2 className="text-md sm:text-xl font-semibold py-2">
-          New On Grabix
-        </h2>
+        <h2 className="text-md sm:text-xl font-semibold py-2">New On Grabix</h2>
         <a
           href="/"
           className="flex flex-row justify-center items-center gap-2 font-semibold text-[#FF3269]"
@@ -28,13 +26,13 @@ const NewProducts = () => {
           <BsChevronRight />
         </a>
       </div>
-      <div className="w-[1850px] flex flex-row">
+      <div className="w-full flex flex-row">
         <MdChevronLeft
           onClick={sliderLeft}
           className="text-[40px] text-black ml-20 cursor-pointer opacity-50 hover:opacity-100 mt-6 md:mt-20"
         />
         <div
-          className=" ml-1 w-[1250px] overflow-x-hidden scroll-smooth"
+          className=" ml-1 w-full overflow-x-hidden scroll-smooth"
           id={"slider3"}
         >
           <div className=" flex-row cursor-pointer relative flex items-center w-[1550px] h-full whitespace-nowrap gap-5">
@@ -49,7 +47,7 @@ const NewProducts = () => {
           onClick={sliderRight}
           className="text-[40px] text-black ml-2 cursor-pointer opacity-50 hover:opacity-100 mt-6 md:mt-20"
         />
-      </div> 
+      </div>
     </div>
   );
 };

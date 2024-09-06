@@ -28,13 +28,13 @@ const MostPopular = () => {
           <BsChevronRight />
         </a>
       </div>
-      <div className="w-[1850px] flex flex-row">
+      <div className="w-full flex flex-row">
         <MdChevronLeft
           onClick={sliderLeft}
           className="text-[40px] text-black ml-20 cursor-pointer opacity-50 hover:opacity-100 mt-6 md:mt-20"
         />
         <div
-          className=" ml-1 w-[1250px] overflow-x-hidden scroll-smooth"
+          className=" ml-1 w-full overflow-x-hidden scroll-smooth"
           id={"slider3"}
         >
           <div className=" flex-row cursor-pointer relative flex items-center w-[1550px] h-full whitespace-nowrap gap-5">
@@ -49,7 +49,7 @@ const MostPopular = () => {
           onClick={sliderRight}
           className="text-[40px] text-black ml-2 cursor-pointer opacity-50 hover:opacity-100 mt-6 md:mt-20"
         />
-      </div> 
+      </div>
     </div>
   );
 };

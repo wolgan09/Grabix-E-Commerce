@@ -4,10 +4,12 @@ import Ratings from "./Ratings";
 
 const HowItWorks = () => {
   return (
-    <div className="mt-16 mb-4 w-[100%] h-auto">
+    <div className="mt-16 mb-4 w-full h-auto">
       <div className="flex flex-col justify-center items-center mt-8 mb-4">
         <div>
-          <h2 className="text-2xl font-semibold pt-4 pb-6">Best Rated Products</h2>
+          <h2 className="text-2xl font-semibold pt-4 pb-6">
+            Best Rated Products
+          </h2>
         </div>
         <div className=" flex-wrap md:flex flex-row gap-x-4 box-border justify-center items-center ml-10 md:ml-0">
           {bestRatedProducts.map((item, id) => (
@@ -25,7 +27,9 @@ const HowItWorks = () => {
           ))}
         </div>
       </div>
-      <div className="border-[1px] w-[400px] md:w-[1300px] flex justify-center items-center h-auto mt-20 ml-10 md:ml-[120px]"></div>
+      <div className="w-full h-full px-10 flex justify-center items-center">
+        <div className="border-[1px] w-full flex justify-center items-center h-auto mt-20"></div>
+      </div>
     </div>
   );
 };
