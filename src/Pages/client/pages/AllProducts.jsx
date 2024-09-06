@@ -36,7 +36,7 @@ function AllProducts() {
 
   console.log(totalCount);
 
-  let params = React.useMemo(() => {}, []);
+  let params = {};
   if (sort) params.sort = sort;
   if (page) params.page = page;
 
@@ -52,7 +52,7 @@ function AllProducts() {
       getProductParams.params._order = sort;
     }
     dispatch(getProducts(products, getProductParams));
-  }, [products, sort, page, params, dispatch, setSearchParams]);
+  }, [products, sort, page, dispatch, setSearchParams]);
 
   const handleSort = (e) => {
     console.log(e.target.value);
