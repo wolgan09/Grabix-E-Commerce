@@ -7,7 +7,7 @@ function ProductLoading() {
       <div className="maincard">
         <div className="card__image"></div>
         <div className="card__content">
-          <h2 className="skelaton_heading"></h2>
+          <h2 className="skelaton_heading">{" "}</h2>
           <p className="skelaton_para"></p>
         </div>
       </div>

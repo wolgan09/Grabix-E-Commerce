@@ -22,7 +22,7 @@ function Cart() {
       name: "",
       address: "",
       city: "",
-      mob: "",
+      mob: ""
     }
   );
 
@@ -63,7 +63,7 @@ function Cart() {
   }
   window.onclick = function (event) {
     var modal = document.getElementById("myModal");
-    if (event.target == modal) {
+    if (event.target === modal) {
       modal.style.display = "none";
     }
   };
@@ -94,13 +94,13 @@ function Cart() {
   console.log(arr, "vvvv");
   return (
     <>
-      {cartItem.length == 0 ? (
+      {cartItem.length <= 0 ? (
         <Empty />
       ) : (
         <div className="flex flex-col bg-[#F5F1F7] h-[100vh]">
           <div className="flex pl-[13%] pt-4 pb-3">
             <h2 className="text-[24px] font-semibold ">
-              Cart ({cartItem.length + " " + "Item"})
+              Cart ({`${cartItem.length} Item`})
             </h2>
           </div>
           <div className="flex flex-row justify-center items-center gap-x-4">
@@ -193,7 +193,7 @@ function Cart() {
                 </div>
 
                 <div className="border-[1px] border-[#dbdbdb65] shadow-xl w-auto rounded-lg px-4 py-8 flex flex-col mb-3 justify-center items-center bg-[#FFFFFF] ">
-                  {arr.length == 0 ? (
+                  {arr.length <= 0 ? (
                     <div className="text-[16px] font-medium pb-4 flex flex-row justify-center items-center gap-x-2">
                       <TfiLocationPin className="text-[30px] text-[#f61571]" />
                       <p>Enter Your Address</p>
@@ -201,16 +201,26 @@ function Cart() {
                   ) : (
                     <div className="">
                       <div className="px-4">
-                        <span className="font-semibold text-[18px]">Address</span>- {userAddress.name}<br/>
-                        {userAddress.address},{userAddress.city}<br/>
+                        <span className="font-semibold text-[18px]">
+                          Address
+                        </span>
+                        - {userAddress.name}
+                        <br />
+                        {userAddress.address},{userAddress.city}
+                        <br />
                         {userAddress.mob}"
                       </div>
                       <div>
-                        <button onClick={myBtn} className="text-[#f61571] pt-3 pb-3">CHANGE ADDRESS</button>
+                        <button
+                          onClick={myBtn}
+                          className="text-[#f61571] pt-3 pb-3"
+                        >
+                          CHANGE ADDRESS
+                        </button>
                       </div>
                     </div>
                   )}
-                  {arr.length == 0 ? (
+                  {arr.length <= 0 ? (
                     <button
                       id="myBtn"
                       className={styles.addressBtn}

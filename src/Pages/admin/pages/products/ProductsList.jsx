@@ -1,7 +1,7 @@
 import { DataGrid } from "@mui/x-data-grid";
 import { Link } from "react-router-dom";
 import "./products.scss"
-import Sidebar from "../../components/sidebar/Sidebar"
+// import Sidebar from "../../components/sidebar/Sidebar"
 // import Navbar from "../../components/navbar/Navbar"
 // import Datatable from "../../components/datatable/Datatable"
 import AllProducts from './data-productslist'

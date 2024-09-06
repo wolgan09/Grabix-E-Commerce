@@ -1,43 +1,43 @@
-import { addDoc, collection } from 'firebase/firestore';
-import React, { useState } from 'react';
-import { db } from '../../firebase'; // Import your Firebase configuration
-import Snackbar, { SnackbarCloseReason } from '@mui/material/Snackbar';
-import { Alert } from '@mui/material';
-
+import {
+  // addDoc,
+  collection
+} from "firebase/firestore";
+import React, { useState } from "react";
+import { db } from "../../firebase"; // Import your Firebase configuration
+import Snackbar from "@mui/material/Snackbar"; // , { SnackbarCloseReason }
+import { Alert } from "@mui/material";
 
 const AddProduct = () => {
-
   const [open, setOpen] = useState(false);
 
   const handleClose = (event, reason) => {
-      if ("clickaway" == reason) return;
-      setOpen(false);
+    if ("clickaway" === reason) return;
+    setOpen(false);
   };
 
-  const [productName, setProductName] = useState('');
+  const [productName, setProductName] = useState("");
   const [productPrice, setProductPrice] = useState(0);
-  const [productCategory, setProductCategory] = useState('');
+  const [productCategory, setProductCategory] = useState("");
 
   const handleSubmit = async (e) => {
     setOpen(true);
     e.preventDefault();
 
     // Add product to firebase collection
-      const usersCollectionRef = collection(db, 'products')
-      //  await addDoc(usersCollectionRef, {
-      //   name: productName,
-      //   price: parseFloat(productPrice), // Ensure price is a number
-      //   category: productCategory,
-      // });
- 
-      // Reset form fields
-      setProductName('');
-      setProductPrice(0);
-      setProductCategory('');
+    // eslint-disable-next-line no-unused-vars
+    const usersCollectionRef = collection(db, "products");
+    //  await addDoc(usersCollectionRef, {
+    //   name: productName,
+    //   price: parseFloat(productPrice), // Ensure price is a number
+    //   category: productCategory,
+    // });
 
-      // Optionally, display a success message
+    // Reset form fields
+    setProductName("");
+    setProductPrice(0);
+    setProductCategory("");
 
-
+    // Optionally, display a success message
   };
 
   return (
@@ -73,7 +73,12 @@ const AddProduct = () => {
         </div>
         <button type="submit">Add Product</button>
       </form>
-      <Snackbar open={open} autoHideDuration={6000} onClose={handleClose} anchorOrigin={{ vertical: 'top', horizontal: 'right' }}>
+      <Snackbar
+        open={open}
+        autoHideDuration={6000}
+        onClose={handleClose}
+        anchorOrigin={{ vertical: "top", horizontal: "right" }}
+      >
         <Alert
           onClose={handleClose}
           severity="success"

@@ -1,7 +1,9 @@
 import React from "react";
 import { logo } from "../assets";
-import { category, socialmedia } from "../constant/data";
-import { AiFillApple } from "react-icons/ai";
+import {
+  //  category,
+   socialmedia } from "../constant/data";
+// import { AiFillApple } from "react-icons/ai";
 import { BsGooglePlay } from "react-icons/bs";
 
 const Footer = () => {

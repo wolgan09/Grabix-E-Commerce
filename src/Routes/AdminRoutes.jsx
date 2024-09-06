@@ -4,9 +4,11 @@ import Dashboard from "../Pages/admin/pages/Dashboard/Dashboard";
 import List from "../Pages/admin/pages/list/List";
 import Single from "../Pages/admin/pages/single/Single";
 import New from "../Pages/admin/pages/new/New";
-import { productInputs, userInputs } from "../Pages/admin/formSource";
+import { 
+  // productInputs,
+   userInputs } from "../Pages/admin/formSource";
 import "../Pages/admin/style/dark.scss";
-import { DarkModeContext } from "../Pages/admin/context/darkModeContext";
+// import { DarkModeContext } from "../Pages/admin/context/darkModeContext";
 import { AuthContext } from "../Pages/admin/context/AuthContext";
 import ProductsList from '../Pages/admin/pages/products/ProductsList';
 import OrdersList from '../Pages/admin/pages/orders/AllOrders';
@@ -22,7 +24,7 @@ function AdminRoutes() {
 
   const {currentUser} = useContext(AuthContext)
   
-  const { darkMode } = useContext(DarkModeContext);
+  // const { darkMode } = useContext(DarkModeContext);
   return (
     <Routes>
     <Route path="/">

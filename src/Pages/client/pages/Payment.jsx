@@ -4,7 +4,7 @@ import { useDispatch } from "react-redux";
 import { removeFromCart } from "../../../Redux/Cart/cart.actions";
 import { useSelector } from "react-redux";
 import { MdDelete } from "react-icons/md";
-import { GiTwoCoins } from "react-icons/gi";
+// import { GiTwoCoins } from "react-icons/gi";
 import { TfiLocationPin } from "react-icons/tfi";
 import { useState } from "react";
 import styles from "../styles/Cart.module.css";
@@ -22,9 +22,20 @@ const Payment = () => {
       name: "",
       address: "",
       city: "",
-      mob: "",
+      mob: ""
     }
   );
+
+  React.useEffect(() => {
+    setUserAddress(
+      JSON.parse(localStorage.getItem("address")) || {
+        name: "",
+        address: "",
+        city: "",
+        mob: ""
+      }
+    );
+  }, []);
 
   const cartItem = useSelector((store) => {
     return store.cartReducer.cart;
@@ -57,13 +68,13 @@ const Payment = () => {
     var modal = document.getElementById("myModal");
     modal.style.display = "block";
   }
-  function closeSpan() {
-    var modal = document.getElementById("myModal");
-    modal.style.display = "none";
-  }
+  // function closeSpan() {
+  //   var modal = document.getElementById("myModal");
+  //   modal.style.display = "none";
+  // }
   window.onclick = function (event) {
     var modal = document.getElementById("myModal");
-    if (event.target == modal) {
+    if (event.target === modal) {
       modal.style.display = "none";
     }
   };
@@ -85,11 +96,10 @@ const Payment = () => {
 
   return (
     <>
-
       <div className="flex flex-col bg-[#F5F1F7] h-[100vh]">
         <div className="flex pl-[13%] pt-8 pb-5">
           <h2 className="text-[24px] font-semibold ">
-            Cart ({cartItem.length + " " + "Item"})
+            Cart ({`${cartItem.length} Item`})
           </h2>
         </div>
         <div className="flex flex-row justify-center items-center gap-x-4 ">
@@ -137,12 +147,14 @@ const Payment = () => {
                   <p className="pt-2">₹{value}</p>
                   <p className="pt-2">₹{offerValue}</p>
                   <p className="pt-2 pb-2 border-b-2">rate</p>
-                  <p className="pt-2 text-black font-bold text-[18px]">₹{finalAmount}</p>
+                  <p className="pt-2 text-black font-bold text-[18px]">
+                    ₹{finalAmount}
+                  </p>
                 </div>
               </div>
 
               <div className="border-[1px] border-[#dbdbdb65] shadow-xl w-auto rounded-lg px-4 py-8 flex flex-col mb-3 justify-center items-center bg-[#FFFFFF] ">
-                {arr.length == 0 ? (
+                {arr.length <= 0 ? (
                   <div className="text-[16px] font-medium pb-4 flex flex-row justify-center items-center gap-x-2">
                     <TfiLocationPin className="text-[30px] text-[#f61571]" />
                     <p>Enter Your Address</p>
@@ -150,16 +162,17 @@ const Payment = () => {
                 ) : (
                   <div className="px-5">
                     <div>
-                      <span className="font-semibold text-[18px]">Address</span>- {userAddress.name},<br/>
-                      {userAddress.address}, {userAddress.city},<br/>{userAddress.mob}
-                      
+                      <span className="font-semibold text-[18px]">Address</span>
+                      - {userAddress.name},<br />
+                      {userAddress.address}, {userAddress.city},<br />
+                      {userAddress.mob}
                     </div>
                     {/* <div>
                       <button className="px-5 py-2 bg-[#f61571] text-[#ffffff] rounded-md mt-3 mb-4" onClick={myBtn}>CHANGE ADDRESS</button>
                     </div> */}
                   </div>
                 )}
-                {arr.length == 0 ? (
+                {arr.length <= 0 ? (
                   <button
                     id="myBtn"
                     className={styles.addressBtn}

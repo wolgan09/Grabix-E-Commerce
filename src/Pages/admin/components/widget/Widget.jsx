@@ -1,6 +1,6 @@
 import "./widget.scss";
-import KeyboardArrowUpIcon from "@mui/icons-material/KeyboardArrowUp";
-import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
+// import KeyboardArrowUpIcon from "@mui/icons-material/KeyboardArrowUp";
+// import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
 import PersonOutlinedIcon from "@mui/icons-material/PersonOutlined";
 import AccountBalanceWalletOutlinedIcon from "@mui/icons-material/AccountBalanceWalletOutlined";
 import ShoppingCartOutlinedIcon from "@mui/icons-material/ShoppingCartOutlined";
@@ -10,11 +10,13 @@ import { collection, query, where, getDocs } from "firebase/firestore";
 import { db } from "../../firebase";
 
 const Widget = ({ type }) => {
+  // eslint-disable-next-line no-unused-vars
   const [amount, setAmount] = useState(null);
-  const [productsCount, setProductsCount] = useState(10);
-  const [ordersCount, setOrdersCount] = useState(12);
-  const [customersCount, setCustomersCount] = useState(5);
-  const [storesCount, setStoresCount] = useState(5);
+  // const [productsCount, setProductsCount] = useState(10);
+  // const [ordersCount, setOrdersCount] = useState(12);
+  // const [customersCount, setCustomersCount] = useState(5);
+  // const [storesCount, setStoresCount] = useState(5);
+  // eslint-disable-next-line no-unused-vars
   const [diff, setDiff] = useState(null);
   let data;
 
@@ -133,7 +135,7 @@ const Widget = ({ type }) => {
       );
     };
     fetchData();
-  }, []);
+  }, [data.query]);
 
   return (
     <div className="widget">

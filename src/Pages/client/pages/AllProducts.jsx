@@ -36,7 +36,7 @@ function AllProducts() {
 
   console.log(totalCount);
 
-  let params = {};
+  let params = React.useMemo(() => {}, []);
   if (sort) params.sort = sort;
   if (page) params.page = page;
 
@@ -45,14 +45,14 @@ function AllProducts() {
     getDataOnce();
     setSearchParams(params);
     const getProductParams = {
-      params: { _limit: 15, _page: page },
+      params: { _limit: 15, _page: page }
     };
     if (sort) {
       getProductParams.params._sort = "price";
       getProductParams.params._order = sort;
     }
     dispatch(getProducts(products, getProductParams));
-  }, [products, sort, page]);
+  }, [products, sort, page, params, dispatch, setSearchParams]);
 
   const handleSort = (e) => {
     console.log(e.target.value);
@@ -63,19 +63,16 @@ function AllProducts() {
   return (
     <div className="">
       <div className="flex flex-row w-auto">
-        {isLoading ? 
+        {isLoading ? (
           <>
-          <CategoryLoading/>
-          <div className='flex flex-row flex-wrap pb-20 w-auto mt-[90px]' >
-            {[...Array(15).keys()].map((item) => {
-              return (
-                <ProductLoading/>
-              );
-            })}
+            <CategoryLoading />
+            <div className="flex flex-row flex-wrap pb-20 w-auto mt-[90px]">
+              {[...Array(15).keys()].map((item) => {
+                return <ProductLoading />;
+              })}
             </div>
           </>
-          
-         : 
+        ) : (
           <div className="flex flex-row ">
             <div>
               <AllCategories />
@@ -87,12 +84,17 @@ function AllProducts() {
                   {products} ({totalCount})
                 </div>
                 <div>
-                  <select className=" px-4 py-2" onChange={handleSort} value={sort}>
-                    <option className="hover:bg-blue-400"  value="asc">Price: Low to High</option>
+                  <select
+                    className=" px-4 py-2"
+                    onChange={handleSort}
+                    value={sort}
+                  >
+                    <option className="hover:bg-blue-400" value="asc">
+                      Price: Low to High
+                    </option>
                     <option value="desc">Price: High to Low</option>
                   </select>
                 </div>
-                
               </div>
               <div>
                 <ProductDetails data={prod} />
@@ -100,7 +102,7 @@ function AllProducts() {
               <div></div>
             </div>
           </div>
-        }
+        )}
       </div>
       <div className="flex justify-center items-center">
         <div>
