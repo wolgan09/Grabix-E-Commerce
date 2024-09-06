@@ -18,7 +18,7 @@ const ExploreNewCategories = () => {
 
   return (
     <div>
-      <div className="flex flex-row justify-around gap-[200px] ml-0 md:gap-[700px] pb-6 sm:ml-0">
+      <div className="flex flex-row justify-between ml-0 pb-6 px-10 sm:ml-0">
         <h2 className="text-md sm:text-xl font-semibold">Recent Searches</h2>
         <a
           href="/"
@@ -28,11 +28,13 @@ const ExploreNewCategories = () => {
           <BsChevronRight />
         </a>
       </div>
-      <div className="w-full flex flex-row">
-        <MdChevronLeft
-          onClick={sliderLeft}
-          className="text-[40px] text-black ml-16 cursor-pointer opacity-50 hover:opacity-100 mt-6 md:mt-24"
-        />
+      <div className="w-full px-10 flex flex-row">
+        <div className="flex justify-center items-center">
+          <MdChevronLeft
+            onClick={sliderLeft}
+            className="text-[40px] text-black cursor-pointer opacity-50 hover:opacity-100 mt-5"
+          />
+        </div>
         <div
           className=" ml-1 w-full overflow-x-hidden scroll-smooth"
           id={"slider2"}
@@ -45,10 +47,12 @@ const ExploreNewCategories = () => {
             ))}
           </div>
         </div>
-        <MdChevronRight
-          onClick={sliderRight}
-          className="text-[40px] text-black ml-2 cursor-pointer opacity-50 hover:opacity-100 mt-6 md:mt-24"
-        />
+        <div className="flex justify-center items-center">
+          <MdChevronRight
+            onClick={sliderRight}
+            className="text-[40px] text-black cursor-pointer opacity-50 hover:opacity-100 mt-5"
+          />
+        </div>
       </div>
       <MostPopular />
       <NewProducts />

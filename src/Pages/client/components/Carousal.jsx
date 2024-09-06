@@ -23,10 +23,12 @@ const Carousal = () => {
 
   return (
     <div className="w-full flex flex-row ">
-      <MdChevronLeft
-        onClick={sliderLeft}
-        className="text-[40px] text-black ml-2 cursor-pointer opacity-50 hover:opacity-100 mt-6 md:mt-36"
-      />
+      <div className="flex justify-center items-center">
+        <MdChevronLeft
+          onClick={sliderLeft}
+          className="text-[40px] mt-5 text-black cursor-pointer opacity-50 hover:opacity-100"
+        />
+      </div>
       <div
         id={"slider1"}
         className=" mt-8 flex-row gap-6 cursor-pointer relative flex items-center w-full h-full whitespace-nowrap scroll-smooth overflow-x-hidden"
@@ -43,10 +45,12 @@ const Carousal = () => {
           className="rounded-xl h-[250px]"
         />
       </div>
-      <MdChevronRight
-        onClick={sliderRight}
-        className="text-[40px] text-black ml-2 cursor-pointer opacity-50 hover:opacity-100 mt-6 md:mt-36"
-      />
+      <div className="flex justify-center items-center">
+        <MdChevronRight
+          onClick={sliderRight}
+          className="text-[40px] mt-5 text-black cursor-pointer opacity-50 hover:opacity-100"
+        />
+      </div>
     </div>
   );
 };
