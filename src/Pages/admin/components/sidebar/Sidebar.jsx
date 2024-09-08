@@ -11,13 +11,38 @@ import ExitToAppIcon from "@mui/icons-material/ExitToApp";
 // import SettingsSystemDaydreamOutlinedIcon from "@mui/icons-material/SettingsSystemDaydreamOutlined";
 // import PsychologyOutlinedIcon from "@mui/icons-material/PsychologyOutlined";
 import AccountCircleOutlinedIcon from "@mui/icons-material/AccountCircleOutlined";
-import { Link } from "react-router-dom";
+import { Link, NavLink, useLocation } from "react-router-dom";
 import { DarkModeContext } from "../../context/darkModeContext";
 import { useContext } from "react";
+import { sidebarList } from "./sidebarData";
 
 const Sidebar = () => {
   // eslint-disable-next-line no-unused-vars
   const { dispatch } = useContext(DarkModeContext);
+  const location = useLocation();
+
+  const getSidebarIcon = (item) => {
+    const isActive = location.pathname.indexOf(encodeURI(item.route)) !== -1;
+    switch (item.icon) {
+      case "dashboard":
+        return <DashboardIcon className="icon" />;
+      case "users":
+        return <PersonOutlineIcon className="icon" />;
+      case "products":
+        return <StoreIcon className="icon" />;
+      case "orders":
+        return <CreditCardIcon className="icon" />;
+      case "banners":
+        return <LocalShippingIcon className="icon" />;
+      case "profile":
+        return <AccountCircleOutlinedIcon className="icon" />;
+      case "logout":
+        return <ExitToAppIcon className="icon" />;
+      default:
+        return <></>;
+    }
+  };
+
   return (
     <div className="sidebar">
       <div className="top">
@@ -29,44 +54,20 @@ const Sidebar = () => {
       {/* <hr /> */}
       <div className="center">
         <ul>
-        <Link to="/admin" style={{ textDecoration: "none" }}>
-          <li>
-            <DashboardIcon className="icon" />
-            <span>Dashboard</span>
-          </li>
-          </Link>
-          <Link to="/admin/users" style={{ textDecoration: "none" }}>
-            <li>
-              <PersonOutlineIcon className="icon" />
-              <span>Users</span>
-            </li>
-          </Link>
-          <Link to="/admin/products" style={{ textDecoration: "none" }}>
-            <li>
-              <StoreIcon className="icon" />
-              <span>Products</span>
-            </li>
-          </Link>
-          <Link to="/admin/orders" style={{ textDecoration: "none" }}>
-          <li>
-            <CreditCardIcon className="icon" />
-            <span>Orders</span>
-          </li>
-          </Link>
-          <Link to="/admin/banners" style={{ textDecoration: "none" }}>
-          <li>
-            <LocalShippingIcon className="icon" />
-            <span>Banner</span>
-          </li>
-          </Link>
-          <li>
-            <AccountCircleOutlinedIcon className="icon" />
-            <span>Profile</span>
-          </li>
-          <li>
-            <ExitToAppIcon className="icon" />
-            <span>Logout</span>
-          </li>
+          {sidebarList.map((item) => {
+            return (
+              <NavLink
+                className="link"
+                to={item.route}
+                style={{ textDecoration: "none" }}
+              >
+                <li className="my-2">
+                  {getSidebarIcon(item)}
+                  <span>{item.moduleName}</span>
+                </li>
+              </NavLink>
+            );
+          })}
         </ul>
       </div>
       {/* <div className="bottom">
