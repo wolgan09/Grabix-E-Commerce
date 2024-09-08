@@ -1,12 +1,15 @@
 import React from "react";
 import { logo } from "../assets";
-import { category, socialmedia } from "../constant/data";
-import { AiFillApple } from "react-icons/ai";
+import {
+  //  category,
+  socialmedia
+} from "../constant/data";
+// import { AiFillApple } from "react-icons/ai";
 import { BsGooglePlay } from "react-icons/bs";
 
 const Footer = () => {
   return (
-    <div className="w-[100%] pl-8 md:pl-32 pt-4 md:pt-10">
+    <div className="w-[100%] px-8 md:pl-32 pt-4 md:pt-10">
       <div className="flex flex-col md:flex-row gap-x-32 mb-10 mt-12">
         <div className="">
           <img src={logo} alt="logo" />
@@ -41,13 +44,19 @@ const Footer = () => {
               <li className="mb-2">About Us</li>
               <li className="mb-2">Cancellation Policy</li>
               <li className="mb-2">Cities</li>
-
             </ul>
           </div>
           <div className="mt-8">
             <p className="mb-2">Download App</p>
             <div className="flex flex-col gap-4 w-[400px] md:w-full ">
-              <button className="mb-2 mt-2 border-2 px-0 md:px-10 py-3 rounded-lg flex flex-row justify-center items-center gap-4" onClick={()=>window.open("https://play.google.com/store/apps/details?id=com.zeptoconsumerapp&pli=1")}>
+              <button
+                className="mb-2 mt-2 border-2 px-0 md:px-10 py-3 rounded-lg flex flex-row justify-center items-center gap-4"
+                onClick={() =>
+                  window.open(
+                    "https://play.google.com/store/apps/details?id=com.zeptoconsumerapp&pli=1"
+                  )
+                }
+              >
                 <BsGooglePlay className="text-[20px]" />
                 Get it on Playstore
               </button>
@@ -55,11 +64,9 @@ const Footer = () => {
                 <AiFillApple className="text-[24px]" />
                 Get it on Apple Store
               </button> */}
-
+            </div>
           </div>
         </div>
-        </div>
-
       </div>
     </div>
   );

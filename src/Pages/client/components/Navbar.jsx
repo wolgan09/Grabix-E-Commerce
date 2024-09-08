@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { logo } from "../assets";
 import { BsCart3, BsSearch } from "react-icons/bs";
 import { MdLocationOn } from "react-icons/md";
@@ -22,11 +22,11 @@ const Navbar = () => {
   let offerValue = 0;
   cartItem.map((el) => {
     offerValue += Number(el.price);
-    return (value = value+Number(el.price2))
-  })
+    return (value = value + Number(el.price2));
+  });
+  // eslint-disable-next-line no-unused-vars
   const finalAmount = offerValue;
   offerValue = value - offerValue;
-  
 
   // console.log(cartItem,"dd");
 
@@ -59,12 +59,12 @@ const Navbar = () => {
             "Date",
             "Elderberry",
             "Fig",
-            "Grape",
+            "Grape"
           ]}
         />
         <BsSearch className="sm:flex text-[#0A1408] text-[20px]" />
         <Link to="/cart">
-          {cartItem.length == 0 ? (
+          {cartItem.length <= 0 ? (
             <BsCart3 className="text-[24px] text-[#0A1408] mr-3" />
           ) : (
             <div>

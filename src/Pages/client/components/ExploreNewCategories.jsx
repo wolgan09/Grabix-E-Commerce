@@ -18,10 +18,8 @@ const ExploreNewCategories = () => {
 
   return (
     <div>
-      <div className="flex flex-row justify-around gap-[200px] ml-0 md:gap-[700px] pb-6 sm:ml-0">
-        <h2 className="text-md sm:text-xl font-semibold">
-          Recent Searches
-        </h2>
+      <div className="flex flex-row justify-between ml-0 pb-6 px-10 sm:ml-0">
+        <h2 className="text-md sm:text-xl font-semibold">Recent Searches</h2>
         <a
           href="/"
           className="flex flex-row justify-center items-center gap-2 font-semibold text-[#FF3269]"
@@ -30,13 +28,15 @@ const ExploreNewCategories = () => {
           <BsChevronRight />
         </a>
       </div>
-      <div className="w-[1850px] flex flex-row">
-        <MdChevronLeft
-          onClick={sliderLeft}
-          className="text-[40px] text-black ml-16 cursor-pointer opacity-50 hover:opacity-100 mt-6 md:mt-24"
-        />
+      <div className="w-full px-10 flex flex-row">
+        <div className="flex justify-center items-center">
+          <MdChevronLeft
+            onClick={sliderLeft}
+            className="text-[40px] text-black cursor-pointer opacity-50 hover:opacity-100 mt-5"
+          />
+        </div>
         <div
-          className=" ml-1 w-[1250px] overflow-x-hidden scroll-smooth"
+          className=" ml-1 w-full overflow-x-hidden scroll-smooth"
           id={"slider2"}
         >
           <div className=" flex-row cursor-pointer relative flex items-center w-[1550px] h-full whitespace-nowrap">
@@ -47,12 +47,14 @@ const ExploreNewCategories = () => {
             ))}
           </div>
         </div>
-        <MdChevronRight
-          onClick={sliderRight}
-          className="text-[40px] text-black ml-2 cursor-pointer opacity-50 hover:opacity-100 mt-6 md:mt-24"
-        />
+        <div className="flex justify-center items-center">
+          <MdChevronRight
+            onClick={sliderRight}
+            className="text-[40px] text-black cursor-pointer opacity-50 hover:opacity-100 mt-5"
+          />
+        </div>
       </div>
-      <MostPopular/>
+      <MostPopular />
       <NewProducts />
       {/* Banner 3 */}
       {/* <div className="mt-12 mb-6">

@@ -1,34 +1,39 @@
-import React, { useEffect } from 'react';
-import styles from '../styles/UserAccount.module.css';
-import { BsFillBagCheckFill , BsFillChatTextFill , BsFillGeoAltFill , BsFillPersonFill} from "react-icons/bs";
-import Order from '../components/Order';
-import Profile from '../components/Profile';
-import Customer from '../components/CustomerMenu';
-import Addresses from '../components/Addresses';
-import {auth} from '../../../firebase';
-import { useDispatch, useSelector } from 'react-redux';
-import { userLogout } from '../../../Redux/UserAuth/userAuth.actions';
-import { addToCart } from '../../../Redux/Cart/cart.actions';
-const arr = JSON.parse(localStorage.getItem("orderItem")) || [];
-
+import React, { useEffect } from "react";
+import styles from "../styles/UserAccount.module.css";
+import {
+  BsFillBagCheckFill,
+  BsFillChatTextFill,
+  BsFillGeoAltFill,
+  BsFillPersonFill
+} from "react-icons/bs";
+import Order from "../components/Order";
+import Profile from "../components/Profile";
+import Customer from "../components/CustomerMenu";
+import Addresses from "../components/Addresses";
+import { auth } from "../../../firebase";
+import { useDispatch, useSelector } from "react-redux";
+import { userLogout } from "../../../Redux/UserAuth/userAuth.actions";
+import { addToCart } from "../../../Redux/Cart/cart.actions";
+// const arr = JSON.parse(localStorage.getItem("orderItem")) || [];
 
 function UserAccount() {
   const dispatch = useDispatch();
+  const allUsers = React.useMemo(() => [], []);
+  const listAllUsers = React.useCallback(
+    async (nextPageToken) => {
+      const res = await auth.listUsers(1000, nextPageToken);
+      allUsers.push(...res.users);
+      if (res.pageToken) {
+        await listAllUsers(res.pageToken);
+      }
+    },
+    [allUsers]
+  );
 
   useEffect(() => {
     listAllUsers();
     console.log(allUsers);
-  }, [])
-  
-  const allUsers = [];
-
-  const listAllUsers = async (nextPageToken) => {
-    const res = await auth.listUsers(1000, nextPageToken);
-    allUsers.push(...res.users);
-    if (res.pageToken) {
-      await listAllUsers(res.pageToken);
-    }
-  };
+  }, [allUsers, listAllUsers]);
 
   const handleLogout = () => {
     localStorage.setItem("userInfoF", null);
@@ -128,4 +133,4 @@ function UserAccount() {
   );
 }
 
-export default UserAccount
+export default UserAccount;

@@ -11,9 +11,7 @@ import { ref, uploadBytesResumable, getDownloadURL } from "firebase/storage";
 import { useNavigate } from "react-router-dom";
 import { banerInputs } from "../../formSource";
 import "./banner.scss";
-import { Button } from "@mui/material";
-
-
+// import { Button } from "@mui/material";
 
 const BannerPage = ({ title = 'Add New Banner' }) => {
   const [file, setFile] = useState("");
