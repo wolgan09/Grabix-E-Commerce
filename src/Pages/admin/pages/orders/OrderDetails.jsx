@@ -112,7 +112,7 @@ function OrderDetails() {
                                 <img src="https://i.ibb.co/5TSg7f6/Rectangle-18.png" alt="avatar" />
                                 <div class="flex justify-start items-start flex-col space-y-2">
                                     <p class="text-base text-gray-800 font-semibold leading-4 text-left text-gray-800">David Kent</p>
-                                    <p class="text-sm text-black leading-5 text-black">10 Previous Orders</p>
+                                    <a class="text-sm text-black leading-5 text-black" href='/admin/previous-orders'>10 Previous Orders</a>
                                 </div>
                             </div>
     

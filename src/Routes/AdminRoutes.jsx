@@ -13,6 +13,7 @@ import OrdersList from '../Pages/admin/pages/orders/AllOrders';
 import OrderDetails from '../Pages/admin/pages/orders/OrderDetails';
 import BannerPage from '../Pages/admin/pages/banner/BannerPage';
 import AddProduct from '../Pages/admin/pages/products/AddProduct';
+import AddBanner from '../Pages/admin/pages/banner/AddBanner';
 
 function AdminRoutes() {
 
@@ -91,21 +92,30 @@ function AdminRoutes() {
         <Route
           index
           element={
-            // <RequireAuth>
               <OrdersList />
-            // </RequireAuth>
           }
         />
         <Route
           path=":Id"
           element={
-            // <RequireAuth>
               <OrderDetails />
-            // </RequireAuth>
           }
         />
       </Route>
-      <Route path="banners" element={<BannerPage />}/>
+      <Route path="banners">
+        <Route
+          index
+          element={
+              <BannerPage />
+          }
+        />
+        <Route
+          path="new"
+          element={
+              <AddBanner />
+          }
+        />
+      </Route>
     </Route>
   </Routes>
   );

@@ -8,6 +8,8 @@ import axios from "axios";
 import Filter from "../components/Filter";
 import ProductLoading from "../components/LoadingComponent/ProductLoading";
 import CategoryLoading from "../components/LoadingComponent/CategoryLoading";
+import { collection, getDocs } from "firebase/firestore";
+import { db } from "../../admin/firebase";
 
 function AllProducts() {
   const dispatch = useDispatch();
@@ -29,8 +31,12 @@ function AllProducts() {
   });
 
   const getDataOnce = async () => {
-    let res = await axios.get("https://zeptojson.onrender.com/Fruits");
-    let data = res.data;
+    const querySnapshot = await getDocs(collection(db, "products"));
+    const productList = querySnapshot.docs.map((doc) => ({
+      id: doc.id,
+      ...doc.data(),
+    }));
+    let data = productList;
     setTotalCount(data.length);
   };
 
