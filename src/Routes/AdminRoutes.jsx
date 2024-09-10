@@ -16,6 +16,7 @@ import OrdersList from "../Pages/admin/pages/orders/AllOrders";
 import OrderDetails from "../Pages/admin/pages/orders/OrderDetails";
 import BannerPage from "../Pages/admin/pages/banner/BannerPage";
 import AddProduct from "../Pages/admin/pages/products/AddProduct";
+import ProductOverView from "../Pages/admin/pages/products/productOverview";
 
 function AdminRoutes() {
   const { currentUser } = useContext(AuthContext);
@@ -49,17 +50,17 @@ function AdminRoutes() {
           <Route
             path=":userId"
             element={
-              <RequireAuth>
-                <Single />
-              </RequireAuth>
+              // <RequireAuth>
+              <Single />
+              // /* </RequireAuth> */
             }
           />
           <Route
             path="new"
             element={
-              <RequireAuth>
-                <New inputs={userInputs} title="Add New Vendor" />
-              </RequireAuth>
+              // <RequireAuth>
+              <New inputs={userInputs} title="Add New Vendor" />
+              // </RequireAuth>
             }
           />
         </Route>
@@ -75,9 +76,9 @@ function AdminRoutes() {
           <Route
             path=":productId"
             element={
-              <RequireAuth>
-                <Single />
-              </RequireAuth>
+              // <RequireAuth>
+              <ProductOverView />
+              // </RequireAuth>
             }
           />
           <Route

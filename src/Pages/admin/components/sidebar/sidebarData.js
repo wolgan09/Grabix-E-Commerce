@@ -4,7 +4,7 @@ const sidebarList = [
     label: "Dashboard",
     icon: "dashboard",
     route: "/admin/dashboard",
-    roles: [1]
+    roles: [1, 2]
   },
   {
     moduleName: "Users",

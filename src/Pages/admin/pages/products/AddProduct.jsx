@@ -1,4 +1,5 @@
 import {
+  addDoc,
   // addDoc,
   collection
 } from "firebase/firestore";
@@ -6,7 +7,7 @@ import React, { useState } from "react";
 import { db } from "../../firebase"; // Import your Firebase configuration
 import Snackbar from "@mui/material/Snackbar"; // , { SnackbarCloseReason }
 import { Alert } from "@mui/material";
-
+import TextField from "@mui/material/TextField";
 const AddProduct = () => {
   const [open, setOpen] = useState(false);
 
@@ -16,7 +17,7 @@ const AddProduct = () => {
   };
 
   const [productName, setProductName] = useState("");
-  const [productPrice, setProductPrice] = useState(0);
+  const [productPrice, setProductPrice] = useState();
   const [productCategory, setProductCategory] = useState("");
 
   const handleSubmit = async (e) => {
@@ -26,11 +27,11 @@ const AddProduct = () => {
     // Add product to firebase collection
     // eslint-disable-next-line no-unused-vars
     const usersCollectionRef = collection(db, "products");
-    //  await addDoc(usersCollectionRef, {
-    //   name: productName,
-    //   price: parseFloat(productPrice), // Ensure price is a number
-    //   category: productCategory,
-    // });
+    await addDoc(usersCollectionRef, {
+      name: productName,
+      price: parseFloat(productPrice), // Ensure price is a number
+      category: productCategory
+    });
 
     // Reset form fields
     setProductName("");
@@ -41,38 +42,45 @@ const AddProduct = () => {
   };
 
   return (
-    <div>
-      <h2>Add New Product</h2>
-      <form onSubmit={handleSubmit}>
-        <div>
-          <label htmlFor="productName">Name:</label>
-          <input
-            type="text"
+    <div className="px-5">
+      <p className="text-[#7451f8] font-bold text-xl">Add New Product</p>
+      <div className="w-full">
+        <div className="my-5">
+          <TextField
             id="productName"
             value={productName}
             onChange={(e) => setProductName(e.target.value)}
+            label="Name"
+            variant="standard"
           />
         </div>
-        <div>
-          <label htmlFor="productPrice">Price:</label>
-          <input
-            type="number"
+        <div className="my-5">
+          <TextField
             id="productPrice"
             value={productPrice}
             onChange={(e) => setProductPrice(e.target.value)}
+            label="Price"
+            variant="standard"
+            type="number"
           />
         </div>
-        <div>
-          <label htmlFor="productCategory">Category:</label>
-          <input
-            type="text"
+        <div className="my-5">
+          <TextField
             id="productCategory"
             value={productCategory}
             onChange={(e) => setProductCategory(e.target.value)}
+            label="Category"
+            variant="standard"
           />
         </div>
-        <button type="submit">Add Product</button>
-      </form>
+        <button
+          className="border px-3 py-2 rounded-md text-[#7451f8] border-[#7451f8]"
+          type="submit"
+          onClick={handleSubmit}
+        >
+          Add Product
+        </button>
+      </div>
       <Snackbar
         open={open}
         autoHideDuration={6000}

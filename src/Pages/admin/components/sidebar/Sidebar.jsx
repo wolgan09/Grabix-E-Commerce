@@ -11,7 +11,11 @@ import ExitToAppIcon from "@mui/icons-material/ExitToApp";
 // import SettingsSystemDaydreamOutlinedIcon from "@mui/icons-material/SettingsSystemDaydreamOutlined";
 // import PsychologyOutlinedIcon from "@mui/icons-material/PsychologyOutlined";
 import AccountCircleOutlinedIcon from "@mui/icons-material/AccountCircleOutlined";
-import { Link, NavLink, useLocation } from "react-router-dom";
+import {
+  Link,
+  NavLink
+  // useLocation
+} from "react-router-dom";
 import { DarkModeContext } from "../../context/darkModeContext";
 import { useContext } from "react";
 import { sidebarList } from "./sidebarData";
@@ -19,10 +23,10 @@ import { sidebarList } from "./sidebarData";
 const Sidebar = () => {
   // eslint-disable-next-line no-unused-vars
   const { dispatch } = useContext(DarkModeContext);
-  const location = useLocation();
+  // const location = useLocation();
 
   const getSidebarIcon = (item) => {
-    const isActive = location.pathname.indexOf(encodeURI(item.route)) !== -1;
+    // const isActive = location.pathname.indexOf(encodeURI(item.route)) !== -1;
     switch (item.icon) {
       case "dashboard":
         return <DashboardIcon className="icon" />;

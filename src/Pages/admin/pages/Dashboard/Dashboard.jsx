@@ -11,10 +11,10 @@ const Dashboard = () => {
   const statusBarCards = [
     { name: "Delivered", value: "10", color: "success" },
     { name: "Out For Delivery", value: "3", color: "secondary" },
-    { name: "Cancelled", value: "2", color: "primary" },
+    { name: "Cancelled", value: "2", color: "primary" }
   ];
   return (
-    <div className="home">
+    <div className="home h-full overflow-y-auto">
       <div className="homeContainer">
         <div className="widgets">
           <Widget type="product" />
@@ -31,13 +31,16 @@ const Dashboard = () => {
 
         <div className="status-cards">
           {statusBarCards.map((card) => {
-          return(
-            <>
-               <Chip label={`${card.name} ${card.value}` } variant="outlined" color={card.color} />
-            </>
-          )
-          })
-        }
+            return (
+              <>
+                <Chip
+                  label={`${card.name} ${card.value}`}
+                  variant="outlined"
+                  color={card.color}
+                />
+              </>
+            );
+          })}
         </div>
         <div className="listContainer">
           <div className="listTitle">Latest Deliveries</div>

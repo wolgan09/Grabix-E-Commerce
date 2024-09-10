@@ -64,24 +64,28 @@ const OrdersList = () => {
     }
   ];
   return (
-    <div className="list">
-      <div className="datatable">
-        <div className="datatableTitle">
-          <span>
-            Orders List <Chip label={AllProducts.length} />
-          </span>
-        </div>
-        {/* {isDataFetched && data.length ? */}
+    <div className="px-3">
+      <div className="flex items-center justify-between my-3">
+        <p className="text-[#7451f8] font-bold text-xl relative">
+          <p className="">
+            Orders List{" "}
+            <span className="border bg-[#7451f8] text-white rounded-full font-normal text-xs -top-2 -right-3 absolute px-1 py-0">
+              {data.length}
+            </span>
+          </p>
+        </p>
+      </div>
+      <div className="h-[calc(100vh_-_11rem)]">
         <DataGrid
-          className="datagrid"
+          className="overflow-auto position-relative h-full bg-white"
           rows={data || []}
           columns={orderColumns.concat(actionColumn)}
           pageSize={9}
           rowsPerPageOptions={[9]}
           checkboxSelection
+          // autoHeight
           rowHeight={125}
         />
-        {/* : null } */}
       </div>
     </div>
   );

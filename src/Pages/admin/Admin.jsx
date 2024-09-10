@@ -6,13 +6,16 @@ import "./Admin.scss";
 
 function Admin() {
   return (
-    <div>
-      <div className="home">
+    <div className="flex ">
+      <div className="">
         <Sidebar />
-        <div className="homeContainer">
-          <Navbar />
-          <div className="widgets"></div>
-          <AdminRoutes />
+      </div>
+      <div className="w-full">
+        <Navbar />
+        <div className="bg-[#ece8ff] p-4 h-[calc(100vh_-_3.2rem)]">
+          <div className="h-full w-full bg-white rounded-xl p-3 shadow-lg ">
+            <AdminRoutes />
+          </div>
         </div>
       </div>
     </div>

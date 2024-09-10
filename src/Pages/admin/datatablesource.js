@@ -1,4 +1,5 @@
 import { Chip } from "@mui/material";
+import { formatter } from "../../Helpers/firebaseHelper";
 
 export const userColumns = [
   { field: "id", headerName: "ID", width: 70 },
@@ -13,18 +14,18 @@ export const userColumns = [
           {params.row.user}
         </div>
       );
-    },
+    }
   },
   {
     field: "email",
     headerName: "Email",
-    width: 230,
+    width: 230
   },
 
   {
     field: "address",
     headerName: "Address",
-    width: 100,
+    width: 100
   },
   {
     field: "status",
@@ -36,51 +37,53 @@ export const userColumns = [
           {params.row.status}
         </div>
       );
-    },
-  },
+    }
+  }
 ];
 
 export const productsColumns = [
-  { field: "id", headerName: "ID", width: 70 },
+  { field: "id", headerName: "ID", width: 200 },
+  // {
+  //   field: "images",
+  //   headerName: "image",
+  //   width: 230,
+  //   renderCell: (params) => {
+  //     return (
+  //       <div className="cellWithImg">
+  //         <img className="cellImg" src={params.row.images} alt="avatar" />
+  //         {params.row.name}
+  //       </div>
+  //     );
+  //   }
+  // },
   {
-    field: "images",
-    headerName: "image",
-    width: 230,
-    renderCell: (params) => {
-      return (
-        <div className="cellWithImg">
-          <img className="cellImg" src={params.row.images} alt="avatar" />
-          {params.row.username}
-        </div>
-      );
-    },
-  },
-  {
-    field: "title",
+    field: "name",
     headerName: "Title",
-    width: 230,
+    width: 230
   },
   {
     field: "category",
     headerName: "Category",
-    width: 230,
+    width: 230
   },
 
   {
     field: "price",
     headerName: "Price",
     width: 100,
-  },
+    renderCell: (params) => {
+      return <p className="font-bold">{formatter.format(params.row.price)}</p>;
+    }
+  }
 ];
 
-
 export const orderColumns = [
-  { field: "id", headerName: "#Serial"},
+  { field: "id", headerName: "#Serial" },
   { field: "itemName", headerName: "Title", width: 70 },
   { field: "orderId", headerName: "Order id" },
   { field: "orderDate", headerName: "Order date" },
   { field: "customerInfo", headerName: "Customer info" },
-  { field: "store", headerName: "Store", width: 150},
+  { field: "store", headerName: "Store", width: 150 },
   { field: "itemQty", headerName: "Quantity" },
   { field: "paymentType", headerName: "Payment Type" },
   { field: "totalAmt", headerName: "Total" },
@@ -89,12 +92,13 @@ export const orderColumns = [
     headerName: "Order status",
     width: 150,
     renderCell: (params) => {
-      const statusColor = params.row.orderStatus === 'Delivered' ? 'success' : "primary"
+      const statusColor =
+        params.row.orderStatus === "Delivered" ? "success" : "primary";
       return (
-        <div >
+        <div>
           <Chip color={statusColor} label={params.row.orderStatus} />
         </div>
       );
-    },
-  },
+    }
+  }
 ];
